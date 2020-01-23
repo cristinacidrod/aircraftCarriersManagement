@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<!-- Top -->
+
+<h3>BEST CARRIERS</h3>
+
+<div class="grid grid-pad">
+    <a *ngFor="let carrier of carriers" class="col-1-4" routerLink="/detail/{{carrier.id}}">
+        <div class="module carriers">
+            <h4>{{carrier.name}}</h4>
+        </div>
+    </a>
+</div>
+
+<app-carrier-search></app-carrier-search>

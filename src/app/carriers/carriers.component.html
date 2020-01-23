@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<!-- List -->
+
+<h2>My Carriers</h2>
+
+<div>
+    <label>Carrier name:
+        <input #carrierName />
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(carrierName.value); carrierName.value=''">
+        add
+    </button>
+</div>
+
+<ul class="carriers">
+    <li *ngFor="let carrier of carriers">
+        <a routerLink="/detail/{{carrier.id}}">
+            <span class="badge">{{carrier.id}}</span> {{carrier.name}}
+        </a>
+        <button class="delete" title="delete carrier" (click)="delete(carrier)">x</button>
+    </li>
+</ul>
